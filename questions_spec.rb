@@ -136,7 +136,7 @@ describe 'the Friday test :)' do
     expect(n).to eq 6
   end
 
-  xspecify 'remove_capital_letters_from_string' do
+  specify 'remove_capital_letters_from_string' do
     n = remove_capital_letters_from_string 'Hello JohnDoe'
     expect(n).to eq 'ello ohnoe'
   end
@@ -174,7 +174,7 @@ describe 'the Friday test :)' do
     expect(b).to be_true
   end
 
-  xspecify 'get_upper_limit_of' do
+  specify 'get_upper_limit_of' do
     n = get_upper_limit_of 1..20
     expect(n).to eq 20
   end
@@ -187,10 +187,10 @@ describe 'the Friday test :)' do
     expect(b).to be_true
   end
 
-  xspecify 'square_root_of' do
+  specify 'square_root_of' do
     a = square_root_of 9
     b = square_root_of 3
-    expect(a).to eq 9.0
+    expect(a).to eq 3.0
     expect(a).to eq 1.7320508075688772
   end
 

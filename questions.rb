@@ -79,7 +79,27 @@ def round_down_number number
   number.floor
 end
 
-def format_date_nicely time
-  time = Time.new(2013,10,31)
-  time.strftime('%d/%m/%Y')
+def format_date_nicely date
+  date = Time.new(2013,10,31)
+  date.strftime('%d/%m/%Y')
+end
+
+def your_birthday_is_on_a_friday_in_the_year date
+  date = Time.new(2013,1,1)
+end
+
+def get_domain_name_from_email_address email
+  email.upto
+end
+
+def square_root_of number
+  Math.sqrt(number)
+end
+
+def get_upper_limit_of range
+  range.max
+end
+
+def remove_capital_letters_from_string string
+  new_string = string.chars.select{|l| l != l.upcase || l == ' '}.join
 end
