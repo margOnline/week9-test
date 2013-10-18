@@ -106,12 +106,12 @@ describe 'the Friday test :)' do
     expect(n).to eq 'foobar'
   end
 
-  xspecify 'average_of_array' do
+  specify 'average_of_array' do
     n = average_of_array [10, 15, 25]
-    expect(n).to eq 33
+    expect(n).to eq 16
   end
 
-  xspecify 'get_elements_until_greater_than_five' do
+  specify 'get_elements_until_greater_than_five' do
     n = get_elements_until_greater_than_five [1, 3, 5, 4, 1, 2, 6, 2, 1, 3, 7]
     expect(n).to eq [1, 3, 5, 4, 1, 2]
   end
@@ -121,12 +121,12 @@ describe 'the Friday test :)' do
     expect(n).to eq({'a' => 'b', 'c' => 'd'})
   end
 
-  xspecify 'get_all_letters_in_array_of_words' do
+  specify 'get_all_letters_in_array_of_words' do
     n = get_all_letters_in_array_of_words ['cat', 'dog', 'fish']
     expect(n).to eq ['a', 'c', 'd', 'f', 'g', 'h', 'i', 'o', 's', 't']
   end
 
-  xspecify 'swap_keys_and_values_in_a_hash' do
+  specify 'swap_keys_and_values_in_a_hash' do
     n = swap_keys_and_values_in_a_hash({'a' => 'b', 'c' => 'd'})
     expect(n).to eq({'b' => 'a', 'd' => 'c'})
   end
@@ -141,22 +141,22 @@ describe 'the Friday test :)' do
     expect(n).to eq 'ello ohnoe'
   end
 
-  xspecify 'round_up_number' do
+  specify 'round_up_number' do
     n = round_up_number 3.142
     expect(n).to eq 4
   end
 
-  xspecify 'round_down_number' do
+  specify 'round_down_number' do
     n = round_up_number 4.9
     expect(n).to eq 4
   end
 
-  xspecify 'format_date_nicely' do
+  specify 'format_date_nicely' do
     n = format_date_nicely Time.new(2013, 10, 31)
     expect(n).to eq '31/10/2013'
   end
 
-  xspecify 'get_domain_name_from_email_address' do
+  specify 'get_domain_name_from_email_address' do
     n = get_domain_name_from_email_address 'alex@makersacademy.com'
     expect(n).to eq 'makersacademy'
   end

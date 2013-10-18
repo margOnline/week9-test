@@ -35,8 +35,8 @@ def array_sort_by_last_letter_of_word array
 end
 
 def get_first_half_of_string string
-  half_length = string.count / 2
-  half_string = string.slice(half_length)
+  half_length = (string.size / 2).round
+  half_string = string.slice(0,half_length)
 end
 
 def number_of_elements_that_are_palindromes array
@@ -49,4 +49,37 @@ end
 
 def double_array array
   array*2
+end
+
+def average_of_array array
+    averge = (array.inject{|n, elem| n + elem} / array.length).round
+end
+
+def get_elements_until_greater_than_five array
+  array.take_while{|elem| elem <= 5}
+end
+
+def convert_array_to_a_hash array
+  hash = Hash[(0..array.count).zip array]
+end
+
+def get_all_letters_in_array_of_words array
+  letters = (array.map {|elem| elem.chars}).flatten.sort
+end
+
+def swap_keys_and_values_in_a_hash hash
+  new_hash = hash.invert
+end
+
+def round_up_number number
+  number.ceil
+end
+
+def round_down_number number
+  number.floor
+end
+
+def format_date_nicely time
+  time = Time.new(2013,10,31)
+  time.strftime('%d/%m/%Y')
 end
