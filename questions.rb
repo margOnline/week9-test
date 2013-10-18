@@ -100,10 +100,18 @@ end
 
 def your_birthday_is_on_a_friday_in_the_year date
   date = Time.new(2013,1,1)
+    until date.friday? do 
+      date += (60 * 60 * 24 * 365)
+    end 
+  date.year
 end
 
 def get_domain_name_from_email_address email
   domain = email[/@([a-z,A-Z]*)/,1]
+end
+
+def check_a_string_for_special_characters string
+  string.match(/\W/)
 end
 
 def square_root_of number
