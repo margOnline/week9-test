@@ -1,21 +1,21 @@
 def select_elements_starting_with_a array
-  n = array.select {|elem| elem.start_with?('a') }
+  array.select {|elem| elem.start_with?('a') }
 end
 
 def select_elements_starting_with_vowel array
-  n = array.select {|elem| elem =~ /^[aeiou]/}
+  array.select {|elem| elem =~ /^[aeiou]/}
 end
 
 def remove_nils_from_array array
-  n = array.compact 
+  array.compact 
 end
 
 def remove_nils_and_false_from_array array   
-    n = array.delete_if {|elem| elem == false}.compact
+    array.delete_if {|elem| elem == false}.compact
 end
 
 def reverse_every_element_in_array array
-    n = array.map {|elem| elem.reverse}
+    array.map {|elem| elem.reverse}
 end
 
 def every_possible_pairing_of_students array
@@ -23,7 +23,7 @@ def every_possible_pairing_of_students array
 end
 
 def all_elements_except_first_3 array
-  n = array.drop(3)
+  array.drop(3)
 end
 
 def add_element_to_beginning_of_array(array, elem)
@@ -31,7 +31,7 @@ def add_element_to_beginning_of_array(array, elem)
 end
 
 def array_sort_by_last_letter_of_word array
-  n = array.sort_by{ |elem| elem.slice(-1)}
+  array.sort_by{ |elem| elem.slice(-1)}
 end
 
 def get_first_half_of_string string
@@ -40,9 +40,6 @@ def get_first_half_of_string string
 end
 
 def separate_array_into_even_and_odd_numbers array
-  # new_array = []
-  # new_array << array.select { |elem| elem.even?}
-  # new_array << array.select { |elem| elem.odd?}
   array.partition {|elem| elem.even?}
 end
 
@@ -63,7 +60,7 @@ def turn_symbol_into_string symbol
 end
 
 def average_of_array array
-    averge = (array.inject{|n, elem| n + elem} / array.length).round
+  (array.inject{|n, elem| n + elem} / array.length.to_f).round
 end
 
 def get_elements_until_greater_than_five array
@@ -71,15 +68,15 @@ def get_elements_until_greater_than_five array
 end
 
 def convert_array_to_a_hash array
-  hash = Hash[*array.flatten]
+  Hash[*array.flatten]
 end
 
 def get_all_letters_in_array_of_words array
-  letters = (array.map {|elem| elem.chars}).flatten.sort
+  (array.map {|elem| elem.chars}).flatten.sort
 end
 
 def swap_keys_and_values_in_a_hash hash
-  new_hash = hash.invert
+  hash.invert
 end
 
 def round_up_number number
@@ -108,7 +105,7 @@ def your_birthday_is_on_a_friday_in_the_year date
 end
 
 def get_domain_name_from_email_address email
-  domain = email[/@([a-z,A-Z]*)/,1]
+  email[/@([a-z,A-Z]*)/,1]
 end
 
 def check_a_string_for_special_characters string
@@ -128,7 +125,7 @@ def is_a_3_dot_range? range
 end
 
 def remove_capital_letters_from_string string
-  new_string = string.chars.select{|l| l != l.upcase || l == ' '}.join
+  string.chars.select{|l| l != l.upcase || l == ' '}.join
 end
 
 def titleize_a_string string
@@ -139,7 +136,7 @@ def titleize_a_string string
 end
 
 def sort_array_by_word_size array
-  sorted_array = array.sort_by {|word| word.size}
+  array.sort_by {|word| word.size}
 end
 
 def shortest_word_in_array array
