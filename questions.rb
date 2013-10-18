@@ -103,7 +103,7 @@ def your_birthday_is_on_a_friday_in_the_year date
 end
 
 def get_domain_name_from_email_address email
-  email.upto
+  domain = email[/@([a-z,A-Z]*)/,1]
 end
 
 def square_root_of number
@@ -121,7 +121,8 @@ end
 def titleize_a_string string
   words = string.split(' ')
   little_words = %w(a and the or with is are be of but not nor neither)
-  title = words.map{|word| word.capitalize unless little_words.include?(word) || words.first}.join(' ')
+  words.first.capitalize!
+  title = words.map{|word| little_words.include?(word) ? word : word.capitalize}.join(' ')
 end
 
 def sort_array_by_word_size array
@@ -136,3 +137,18 @@ def longest_word_in_array array
   sort_array_by_word_size(array).pop
 end
 
+def word_count_a_file file
+  file = File.open(file, 'r')
+  word_count = 0
+  file.each_line { |line| word_count += line.split.count}  
+  file.close
+  word_count
+end
+
+def add_together_keys_and_values hash
+  hash.flatten.inject{|n,elem| n + elem}
+end
+
+def is_a_3_dot_range? range
+  range.exclude_end?  
+end

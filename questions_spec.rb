@@ -131,7 +131,7 @@ describe 'the Friday test :)' do
     expect(n).to eq({'b' => 'a', 'd' => 'c'})
   end
 
-  xspecify 'add_together_keys_and_values' do
+  specify 'add_together_keys_and_values' do
     n = add_together_keys_and_values({1 => 1, 2 => 2})
     expect(n).to eq 6
   end
@@ -179,7 +179,7 @@ describe 'the Friday test :)' do
     expect(n).to eq 20
   end
 
-  xspecify 'is_a_3_dot_range?' do
+  specify 'is_a_3_dot_range?' do
     a = is_a_3_dot_range? 1..20
     b = is_a_3_dot_range? 1...20
 
@@ -194,7 +194,7 @@ describe 'the Friday test :)' do
     expect(b).to eq 1.7320508075688772
   end
 
-  xspecify 'word_count_a_file' do
+  specify 'word_count_a_file' do
     n = word_count_a_file 'lorem.txt'
     expect(n).to eq 70
   end
