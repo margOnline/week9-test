@@ -19,7 +19,7 @@ def reverse_every_element_in_array array
 end
 
 def every_possible_pairing_of_students array
-
+  array.combination(2).to_a.sort
 end
 
 def all_elements_except_first_3 array
@@ -31,12 +31,18 @@ def add_element_to_beginning_of_array(array, elem)
 end
 
 def array_sort_by_last_letter_of_word array
-  n = array.each{ |elem| elem.slice(-1)}
+  n = array.sort_by{ |elem| elem.slice(-1)}
 end
 
 def get_first_half_of_string string
-  half_length = (string.size / 2).round
+  half_length = (string.size / 2.to_f).round
   half_string = string.slice(0,half_length)
+end
+
+def separate_array_into_even_and_odd_numbers array
+  new_array = []
+  new_array << array.select { |elem| elem.even?}
+  new_array << array.select { |elem| elem.odd?}
 end
 
 def number_of_elements_that_are_palindromes array
@@ -51,6 +57,10 @@ def double_array array
   array*2
 end
 
+def turn_symbol_into_string symbol
+  symbol.to_s
+end
+
 def average_of_array array
     averge = (array.inject{|n, elem| n + elem} / array.length).round
 end
@@ -60,7 +70,7 @@ def get_elements_until_greater_than_five array
 end
 
 def convert_array_to_a_hash array
-  hash = Hash[(0..array.count).zip array]
+  hash = Hash[*array.flatten]
 end
 
 def get_all_letters_in_array_of_words array
@@ -77,6 +87,10 @@ end
 
 def round_down_number number
   number.floor
+end
+
+def make_numbers_negative number
+  number > 0 ? number * -1 : number
 end
 
 def format_date_nicely date
@@ -102,4 +116,11 @@ end
 
 def remove_capital_letters_from_string string
   new_string = string.chars.select{|l| l != l.upcase || l == ' '}.join
+end
+
+def titleize_a_string string
+  words = string.split(' ')
+  little_words = %w(a and the or with is are be of but not nor neither)
+  title = words.map{|word| word.capitalize unless little_words.include?(word)}.join(' ')
+
 end

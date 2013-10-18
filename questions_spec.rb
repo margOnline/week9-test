@@ -33,7 +33,7 @@ describe 'the Friday test :)' do
     expect(n).to eq ['god', 'yeknom', 'tnahpele']
   end
 
-  xspecify 'every_possible_pairing_of_students' do
+  specify 'every_possible_pairing_of_students' do
     n = every_possible_pairing_of_students(['Bob', 'Dave', 'Clive']) || []
     sorted = n.map {|pair| pair.sort}.sort_by {|pair| [pair.first, pair.last] }
 
@@ -63,7 +63,7 @@ describe 'the Friday test :)' do
     expect(b).to eq 'app'
   end
 
-  xspecify 'make_numbers_negative' do
+  specify 'make_numbers_negative' do
     a = make_numbers_negative 5
     b = make_numbers_negative -7
 
@@ -71,7 +71,7 @@ describe 'the Friday test :)' do
     expect(b).to eq -7
   end
 
-  xspecify 'separate_array_into_even_and_odd_numbers' do
+  specify 'separate_array_into_even_and_odd_numbers' do
     n = separate_array_into_even_and_odd_numbers [1, 2, 3, 4, 5, 6, 7]
     expect(n).to eq [[2, 4, 6], [1, 3, 5, 7]]
   end
@@ -101,7 +101,7 @@ describe 'the Friday test :)' do
     expect(n).to eq [1, 2, 3, 1, 2, 3]
   end
 
-  xspecify 'turn_symbol_into_string' do
+  specify 'turn_symbol_into_string' do
     n = turn_symbol_into_string 'foobar'
     expect(n).to eq 'foobar'
   end
@@ -116,7 +116,7 @@ describe 'the Friday test :)' do
     expect(n).to eq [1, 3, 5, 4, 1, 2]
   end
 
-  xspecify 'convert_array_to_a_hash' do
+  specify 'convert_array_to_a_hash' do
     n = convert_array_to_a_hash ['a', 'b', 'c', 'd']
     expect(n).to eq({'a' => 'b', 'c' => 'd'})
   end
@@ -147,7 +147,7 @@ describe 'the Friday test :)' do
   end
 
   specify 'round_down_number' do
-    n = round_up_number 4.9
+    n = round_down_number 4.9
     expect(n).to eq 4
   end
 
@@ -161,7 +161,7 @@ describe 'the Friday test :)' do
     expect(n).to eq 'makersacademy'
   end
 
-  xspecify 'titleize_a_string' do
+  specify 'titleize_a_string' do
     n = titleize_a_string 'the lion the witch and the wardrobe'
     expect(n).to eq 'The Lion the Witch and the Wardrobe'
   end
@@ -191,7 +191,7 @@ describe 'the Friday test :)' do
     a = square_root_of 9
     b = square_root_of 3
     expect(a).to eq 3.0
-    expect(a).to eq 1.7320508075688772
+    expect(b).to eq 1.7320508075688772
   end
 
   xspecify 'word_count_a_file' do
