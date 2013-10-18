@@ -81,12 +81,12 @@ describe 'the Friday test :)' do
     expect(n).to eq 3
   end
 
-  xspecify 'shortest_word_in_array' do
+  specify 'shortest_word_in_array' do
     n = shortest_word_in_array %w(here is a bunch of words of different lengths)
     expect(n).to eq 'a'
   end
 
-  xspecify 'longest_word_in_array' do
+  specify 'longest_word_in_array' do
     n = longest_word_in_array %w(here is a bunch of words of different lengths)
     expect(n).to eq 'different'
   end
@@ -203,7 +203,7 @@ describe 'the Friday test :)' do
     expect { call_method_from_string('foobar') }.to raise_error(NameError)
   end
 
-  xspecify 'is_a_2014_bank_holiday?' do
+  specify 'is_a_2014_bank_holiday?' do
     a = is_a_2014_bank_holiday?(Time.new(2014, 8, 25))
     b = is_a_2014_bank_holiday?(Time.new(2014, 8, 26))
 

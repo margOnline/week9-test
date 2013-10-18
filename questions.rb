@@ -121,6 +121,18 @@ end
 def titleize_a_string string
   words = string.split(' ')
   little_words = %w(a and the or with is are be of but not nor neither)
-  title = words.map{|word| word.capitalize unless little_words.include?(word)}.join(' ')
-
+  title = words.map{|word| word.capitalize unless little_words.include?(word) || words.first}.join(' ')
 end
+
+def sort_array_by_word_size array
+  sorted_array = array.sort_by {|word| word.size}
+end
+
+def shortest_word_in_array array
+  sort_array_by_word_size(array).shift
+end
+
+def longest_word_in_array array
+  sort_array_by_word_size(array).pop
+end
+
