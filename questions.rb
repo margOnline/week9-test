@@ -122,6 +122,10 @@ def get_upper_limit_of range
   range.max
 end
 
+def is_a_3_dot_range? range
+  range.exclude_end?  
+end
+
 def remove_capital_letters_from_string string
   new_string = string.chars.select{|l| l != l.upcase || l == ' '}.join
 end
@@ -157,6 +161,6 @@ def add_together_keys_and_values hash
   hash.flatten.inject{|n,elem| n + elem}
 end
 
-def is_a_3_dot_range? range
-  range.exclude_end?  
+def call_method_from_string string
+  send(string.to_sym)
 end
