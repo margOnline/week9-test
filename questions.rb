@@ -40,9 +40,10 @@ def get_first_half_of_string string
 end
 
 def separate_array_into_even_and_odd_numbers array
-  new_array = []
-  new_array << array.select { |elem| elem.even?}
-  new_array << array.select { |elem| elem.odd?}
+  # new_array = []
+  # new_array << array.select { |elem| elem.even?}
+  # new_array << array.select { |elem| elem.odd?}
+  array.partition {|elem| elem.even?}
 end
 
 def number_of_elements_that_are_palindromes array
@@ -163,4 +164,31 @@ end
 
 def call_method_from_string string
   send(string.to_sym)
+end
+
+def is_a_2014_bank_holiday? date
+  bank_holidays = [
+    Time.new(2014, 1, 1),
+    Time.new(2014, 4, 18),
+    Time.new(2014, 4, 21),
+    Time.new(2014, 5, 5),
+    Time.new(2014, 5, 26),
+    Time.new(2014, 8, 25),
+    Time.new(2014, 12, 25),
+    Time.new(2014, 12, 26) 
+  ]
+  bank_holidays.include?(date)
+
+end
+
+def count_words_of_each_length_in_a_file file
+  text = File.read(file)
+  words = split text
+  word_lengths = Hash.new(0)
+  words.each {|word| word_lengths[word.size] += 1}
+  word_lengths.sort  
+end
+
+def split text
+  text.split(' ').map! {|word| word.gsub(/\W+/,'')}
 end
